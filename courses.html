@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!-- Fontawesome CDN -->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<!-- CSS Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Document</title>
+	<script>
+		window.onload = function () {
+			// Add check mark to course added & remove Add button
+			$('.addCourse').click(function() {
+				$(this).addClass("hide");
+				$(this).next().css("display", "inline");
+			});
+
+			// When Add button is clicked, add class number and title to courseNumber and courseTitle arrays
+			let courseNumber =[];
+			let courseTitle = [];
+			let courseList = ``;
+			$('.addCourse').click(function() {
+				courseNumber.push($(this).parent()[0].innerText.substring(0,8));
+				courseTitle.push($(this).parent()[0].innerText.substring(8,35));
+				sessionStorage.setItem('courseNumber', courseNumber);
+				sessionStorage.setItem('courseTitle', courseTitle);
+			});
+			// remove data from sessionStorage when page is refreshed
+			sessionStorage.clear();
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1 id="title">Fall 2021 Courses</h1>
+		<hr />
+		<button class="reg_courses btn btn-info"><a href="class_schedule.html">View Registered Courses</a></button>
+		<div class="row">
+			<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/webdev.jpg" class="card-img-top" alt="web development course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">CIS 4011</h5>
+				    	<p class="card-text">HTML & CSS & JS</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+
+			<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/business.jpg" class="card-img-top" alt="business course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">BUS 5100</h5>
+				    	<p class="card-text">Business Principles</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+
+			<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/chemistry.jpg" class="card-img-top" alt="chemistry course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">CHM 4000</h5>
+				    	<p class="card-text">Organic Chemistry</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+	   		<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/english.jpg" class="card-img-top" alt="english course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">ENG 2050</h5>
+				    	<p class="card-text">Critical Thinking</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+
+	   		<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/marketing.jpg" class="card-img-top" alt="marketing course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">MRK 3412</h5>
+				    	<p class="card-text">Digital Marketing</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+
+			<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/math.jpg" class="card-img-top" alt="math course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">MTH 8611</h5>
+				    	<p class="card-text">Calculus</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+	   		<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/painting.jpg" class="card-img-top" alt="painting course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">PNT 1200</h5>
+				    	<p class="card-text">Beginning Painting</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+
+	   		<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/physics.jpg" class="card-img-top" alt="physics course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">PHS 5686</h5>
+				    	<p class="card-text">Quantum Physics</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+
+	   		<div class="col-sm">
+				<div class="card" style="width: 18rem;">
+				  	<img src="images/astronomy.jpg" class="card-img-top" alt="astronomy course">
+				  	<div class="card-body">
+				    	<h5 class="card-title">AST 3080</h5>
+				    	<p class="card-text">Introduction to Astronomy</p>
+				    	<a href="#" class="addCourse btn btn-primary">Add</a>
+				    	<i class="fas fa-check-circle"></i>
+				  	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
